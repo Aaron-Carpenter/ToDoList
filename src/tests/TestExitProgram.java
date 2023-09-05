@@ -14,7 +14,8 @@ public class TestExitProgram {
         String input = "5\n";
         System.setIn(new ByteArrayInputStream(input.getBytes()));
         ToDoList2.main(new String[]{});
-        System.setIn(originalSystemIn);s
+        System.setIn(originalSystemIn);
+        // THIS WAS NOT HERE BEFORE
 
     }
 }
