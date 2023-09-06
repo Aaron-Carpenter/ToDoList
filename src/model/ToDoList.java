@@ -1,3 +1,9 @@
+/**
+ * @author Aaron Carpenter - acarpenter5@dmacc.edu
+ * CIS175 - Fall 2021
+ * Sep 5, 2023
+ */
+
 package model;
 
 import java.util.ArrayList;
@@ -27,7 +33,7 @@ public class ToDoList {
                     break;
                 case 5:
                     exitProgram();
-                    return; // Exit the main method but not the program
+                    return;
             }
         }
     }
@@ -52,7 +58,8 @@ public class ToDoList {
                 System.out.println("Sorry, that is not an option!");
                 System.out.print("Enter your choice (1-5): ");
             }
-        } while (choice < 1 || choice > 5);
+        } 
+        while (choice < 1 || choice > 5);
 
         return choice;
     }
@@ -67,14 +74,15 @@ public class ToDoList {
     private static void updateTask() {
         System.out.print("Enter the task number to update: ");
         int taskNumber = scanner.nextInt();
-        scanner.nextLine(); // Consume newline
+        scanner.nextLine();
 
         if (isValidTaskNumber(taskNumber)) {
             System.out.print("Enter the updated task: ");
             String updatedTask = scanner.nextLine();
             tasks.set(taskNumber - 1, updatedTask);
             System.out.println("Task updated!");
-        } else {
+        } 
+        else {
             System.out.println("Invalid task number.");
         }
     }
@@ -89,12 +97,13 @@ public class ToDoList {
     private static void deleteTask() {
         System.out.print("Enter the task number to delete: ");
         int deleteNumber = scanner.nextInt();
-        scanner.nextLine(); // Consume newline
+        scanner.nextLine();
 
         if (isValidTaskNumber(deleteNumber)) {
             tasks.remove(deleteNumber - 1);
             System.out.println("Task deleted!");
-        } else {
+        } 
+        else {
             System.out.println("Invalid task number.");
         }
     }
@@ -106,6 +115,5 @@ public class ToDoList {
     private static void exitProgram() {
         System.out.println("Goodbye!");
         scanner.close();
-        // Don't use System.exit(0); to prevent the program from terminating
     }
 }
